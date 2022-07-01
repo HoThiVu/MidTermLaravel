@@ -89,7 +89,7 @@ textarea {
 </head>
 <body>
     <div class="container">
-        <center> <h3>FORM THÊM MỚI XE</h3></center>
+        <center> <h3>FORM THÊM FOOD</h3></center>
         <button class="btn btn-success"> <a href="{{ route('restaurants.index') }}">Quay lại trang</a></button>
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -132,10 +132,23 @@ textarea {
                         <label for="Phone_">discription</label>
                         <input type="text" name="discription" id="Phone_"/>
                     </div>
-                    {{-- <div class="field Brief">
-                        <label for="Brief_">ngay sx</label>
-                        <input  type="date"></input>
-                    </div> --}}
+                    <div class="field Brief">
+                        <label for="inputCity">Chọn Tên nhà sx</label>
+
+                        {{-- <input type="text" value="{{ isset($car) ?$car->manufacture->name : '' }}" name="name"class="form-control"
+                            id="inputCity"> --}}
+        
+                        <select name="name" id="restaurants">
+                            {{-- <option value="{{ isset($car) ?$car->manufacture->name : '' }}"></option>
+                              <option value="{{ isset($car) ?$car->manufacture->name : '' }}"></option>
+                              <option value="{{ isset($car) ?$car->manufacture->name : '' }}"></option>
+                              <option value="{{ isset($car) ?$car->manufacture->name : '' }}"></option> --}}
+                            @foreach ($list as $item)
+                                <option value="{{ $item->id }}"> {{ $item->name }} </option>
+                            @endforeach
+                        </select>
+                        <br><br>
+                    </div>
                 </div>
                 <input type="submit" class="register"/>
             </form>

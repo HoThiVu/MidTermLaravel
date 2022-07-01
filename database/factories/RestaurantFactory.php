@@ -22,7 +22,7 @@ class RestaurantFactory extends Factory
             'name' => $this->faker->name(),
             'prices' => ''.rand(1,5).'000',
             'discription' => $this->faker->paragraph(),
-            // 'category' => $this->faker->name(),
+            'categories_id' => rand(1,5)
 
         ];
     }

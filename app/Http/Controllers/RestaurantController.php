@@ -87,7 +87,7 @@ class RestaurantController extends Controller
 
  
         
-        return redirect()->route('restaurant.index')->with('thành công', 'bạn đã cập nhật thành công');
+        return redirect()->route('restaurants.index')->with('thành công', 'bạn đã cập nhật thành công');
     }
 
     /**
