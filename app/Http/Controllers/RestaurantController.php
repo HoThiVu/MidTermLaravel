@@ -99,6 +99,11 @@ class RestaurantController extends Controller
     public function show($id)
     {
         //
+
+        // $list = \App\Models\Restaurant::all();
+        $restaurants = Restaurant::find($id);
+        // $car=Car::all()
+        return view('ViewDetailFood',['restaurant'=>$restaurants]);
     }
 
     /**

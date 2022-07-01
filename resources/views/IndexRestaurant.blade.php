@@ -38,14 +38,14 @@
             </div>
         </div>
         <div class="card-deck" id="idimg">
-            @foreach ($restaurants as $restaurants)
-                <form action="{{ route('restaurants.index', $restaurants->id) }}" method="post">
+            @foreach ($restaurants as $restaurant)
+                <form action="" method="post">
                     <div class="card">
-                        <img src="/img/{{ $restaurants['image'] }}" class="card-img-top" alt="..." width="50px">
+                        <img src="/img/{{ $restaurant->image }}" class="card-img-top" alt="..." width="50px"/>
                         <div class="card-body">
-                            {{-- <h5 class="card-title">{{$restaurants['image']}}</h5> --}}
-                            <p class="card-text" >{{$restaurants['prices']}}</p>
-                            <p class="card-text" >{{$restaurants['discription']}}</p>
+                            <h5 class="card-text" ><a href="{{ route('restaurants.show',$restaurant->id) }}">{{$restaurant->name}}</a></h5>
+                            <p class="card-text" >{{$restaurant->discription}}</p>
+                            <p class="card-text" >{{$restaurant->price}}</p>
                             <p class="card-text" ><small class="text-muted">SAN PHAM NGON</small></p>
                         </div>
                     </div>
